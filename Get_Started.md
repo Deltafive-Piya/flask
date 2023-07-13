@@ -1,6 +1,13 @@
+Altered Fork of: https://github.com/immanuelvatta/Python/commits?author=immanuelvatta
+
+workflow:
+env:mySQL WorkBench
+        make diagram(s)
+            make table(s)
+        
+
 # Pre-checklist install
 installing pipenv on a global scope
-https://github.com/immanuelvatta/Python/commits?author=immanuelvatta
 `!Only needs to be done once!`
 
 ```console
@@ -23,6 +30,9 @@ pipenv shell
 
 ---
 - Create folder structure
+- Flask_MySQL DynoCap
+
+
 ```
 - flask_app(📂)
     - config (📂)
