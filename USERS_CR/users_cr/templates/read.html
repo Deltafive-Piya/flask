@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>All Users</h1>
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Created At</th>
+        </thead>
+        <tbody>
+            {% for user in all_users  %}
+                <tr>
+                    <td>
+                        {{user.id}}
+                    </td>
+                    <td>
+                        {{user.f_name +" "+ user.l_name}}
+                    </td>
+                    <td>
+                        {{user.email}}
+                    </td>
+                    <td>
+                        {{user.created_at}}
+                    </td>
+                    <td>
+                        {{user.updated_at}}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/user/create">Create Page</a>
+</body>
+</html>
