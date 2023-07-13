@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+
+    <!-- Styling -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            outline: 1px solid red;
+        }
+
+        .nav {
+            width: 100%;
+            min-height: 50px;
+            display: flex;
+        }
+
+        .container {
+            min-height: 300px;
+            width: 84%;
+            margin: auto;
+            margin-top: 30px;
+            background-color: dimgray;
+            
+        }
+
+        .form {
+            padding: 30px;
+            background-color: cornsilk;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .form label {
+            min-height: 200px;
+            margin: 0 10px;
+        }
+    </style>
+
+</head>
+<nav>
+    super cool nav goes here
+</nav>
+<body>
+    <div class="container">
+        <form class="form" action="/process" method="POST">
+            <div class="form_left">
+                <label for="name">Name:</label><br>
+                <label for="location">Location:</label><br>
+                <label for="language">Favorite Language:</label><br>
+                <label for="comment">Comment:</label><br>
+            </div>
+            <div class="form_right">
+                <input type="text" id="name" name="name"><br>
+                <input type="text" id="location" name="location"><br>
+                <input type="text" id="language" name="language"><br>
+                <textarea id="comment" name="comment"></textarea><br>
+                <input type="submit" value="Submit">
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </form>
+    </div>
+</body>
+</html>

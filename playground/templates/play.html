@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Piya's Playground</title>
+    <style>
+        /* CSS RESET and outline */
+        * {
+            padding:0;margin:0;
+            /* outline: 1px solid red;  */
+            font-family: monospace;
+        }
+        /* Container to format the page slightly... */
+        .text-center {
+            text-align: center;
+        }
+        .container {
+            
+            width:85%;
+            min-height:1000px;
+            margin: 0 auto;
+            margin-top: 100px;
+            padding:15px;
+            display:flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+            .blue-box {
+                background-color:midnightblue;
+                height: 100px;
+                width: 100px;
+                margin: 10px;
+                float: left;
+                color:aliceblue;
+                padding:5px;
+                display:flex;
+                align-items: center;
+                border-radius: 12px;
+            }
+    </style>
+</head>
+<body>
+    <h1 class="text-center">Welcomu to my Dojo!</h1>
+<!-- lvl 1 -->
+
+    <!-- <div class="blue-box"></div>
+    <div class="blue-box"></div>
+    <div class="blue-box"></div> -->
+
+<!-- Lvl2 -->
+
+    <!-- <div class="container">
+        {% for _ in range(x) %}
+            <div class="blue-box">lil bit o code n test</div>
+        {% endfor %}
+    </div> -->
+
+<!-- Lvl 3 -->
+
+    <div class="container">
+        {% for _ in range(x) %}
+            <div class="blue-box" style="background-color: {{ color }};">lil bit o code n test</div>
+        {% endfor %}
+
+
+</body>
+</html>
