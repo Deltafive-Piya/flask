@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>All Users</h1>
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Created At</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            {% for user in all_users %}
+                <tr>
+                    <td>{{user.id}}</td>
+                    <td>{{user.l_name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.created_at}}</td>
+                    <td><a href="/">Show</a> | <a href="/">Edit</a> | <a href="/user/delete/{{user.id}}">Delete</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/user/create">Create Page</a>
+</body>
+</html>
