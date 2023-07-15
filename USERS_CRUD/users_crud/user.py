@@ -21,12 +21,12 @@ class User:
         results = connectToMySQL('users_db').query_db(query) #TO-DO change this to match the mysqldb db name---------------------------------------
 
 
-        users = []
+        magicalZombies = []
 
-        for user in results:
-            users.append(cls(user))
+        for zoro in results:
+            magicalZombies.append(cls(zoro))
 
-        return users
+        return magicalZombies
     
     @classmethod
 
@@ -54,4 +54,14 @@ class User:
 
         results = connectToMySQL('users_db').query_db(query, { 'id': id })
 
+        return results
+    
+
+
+    @classmethod
+
+    def update(cls, data):
+        query = "UPDATE users SET f_name = %(f_name)s, l_name = %(l_name)s, email = %(email)s WHERE id = %(id)s;"
+
+        results = connectToMySQL('users_db').query_db(query, data)
         return results

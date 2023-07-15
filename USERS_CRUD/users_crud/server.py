@@ -11,13 +11,20 @@ def read():
     return render_template('read.html', all_users = user)
 
 
-
-
 @app.route("/user/create")
 def read_user():
 
     return render_template("create.html")
 
+@app.route("/edit/<int:id>")
+def edit_user(id):
+    data = User.get_one()
+    return render_template("edit.html", id)
+
+@app.route("/user/update", methods = ["POST"])
+def update_user():
+    User.update(request.form)
+    return redirect ("/")
 
 
 @app.route("/user/add", methods = ["POST"])
