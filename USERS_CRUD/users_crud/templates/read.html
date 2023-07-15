@@ -1,3 +1,4 @@
+<!-- GUIDANCE FOR PROJECT:  GORDON B-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +23,7 @@
                     <td>{{user.l_name}}</td>
                     <td>{{user.email}}</td>
                     <td>{{user.created_at}}</td>
-                    <td><a href="/">Show</a> | <a href="/edit/{{user.id}}">Edit</a> | <a href="/user/delete/{{user.id}}">Delete</a></td>
+                    <td><a href="/user/show/{{user.id}}">Show</a> | <a href="/edit/{{user.id}}">Edit</a> | <a href="/user/delete/{{user.id}}">Delete</a></td>
                 </tr>
             {% endfor %}
         </tbody>

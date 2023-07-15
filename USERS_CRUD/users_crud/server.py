@@ -18,8 +18,8 @@ def read_user():
 
 @app.route("/edit/<int:id>")
 def edit_user(id):
-    data = User.get_one()
-    return render_template("edit.html", id)
+    data = User.get_one(id)     
+    return render_template("edit.html", person = data)
 
 @app.route("/user/update", methods = ["POST"])
 def update_user():
@@ -38,6 +38,10 @@ def delete_user(id):
 
     return redirect('/')
 
+@app.route("/user/show/<int:id>")
+def show(id):
+    data = User.get_one(id)
+    return render_template("show.html", person = data)
 
 #MAKE SURE THIS IS AT THE BOTTOM
 if __name__=="__main__":

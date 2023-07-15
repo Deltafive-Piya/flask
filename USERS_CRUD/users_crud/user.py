@@ -39,10 +39,10 @@ class User:
     
     @classmethod
 
-    def get_one(cls, data):
+    def get_one(cls, id):
         query = "SELECT * FROM users WHERE id = %(id)s;"
     
-        results = connectToMySQL('users_db').query_db(query, data)[0]
+        results = connectToMySQL('users_db').query_db(query, { 'id': id })[0]
 
         return results
     # def delete(cls, id):
