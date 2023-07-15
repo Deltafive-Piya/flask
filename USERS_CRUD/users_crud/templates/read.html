@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>All Users</title>
 </head>
 <body>
-    <h1>All Users</h1>
+    <h1>read.html</h1>
     <table>
         <thead>
             <th>ID</th>
@@ -18,13 +18,14 @@
         </thead>
         <tbody>
             {% for user in all_users %}
-                <tr>
-                    <td>{{user.id}}</td>
-                    <td>{{user.l_name}}</td>
-                    <td>{{user.email}}</td>
-                    <td>{{user.created_at}}</td>
-                    <td><a href="/user/show/{{user.id}}">Show</a> | <a href="/edit/{{user.id}}">Edit</a> | <a href="/user/delete/{{user.id}}">Delete</a></td>
-                </tr>
+            <tr>
+                <td>{{user.id}}</td>
+                <td>{{user.l_name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.created_at}}</td>
+                <td><a href="/user/show/{{user.id}}">Show</a> | <a href="/edit/{{user.id}}">Edit</a> | <a
+                        href="/user/delete/{{user.id}}">Delete</a></td>
+            </tr>
             {% endfor %}
         </tbody>
     </table>
