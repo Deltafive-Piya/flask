@@ -1,9 +1,11 @@
-from mysqlconnection import connectToMySQL      #import mysqlconnection
-
-class Gamers:                                   #line this up with the schema in the database
+#import mysqlconnection
+from mysqlconnection import connectToMySQL
+#line this up with the schema in the database
+class Gamers:                                   
     #Include the respective tables' columns
+    self.id = data['id']                    
+    #This was copied to populate the below, may need to adjust to match table
     def __init__(self, data):
-        self.id = data['id']                    #This was copied to populate the below, may need to adjust to match table
         self.f_name = data['f_name']
         self.l_name = data['l_name']
         self.tag = data['tag']
@@ -13,11 +15,17 @@ class Gamers:                                   #line this up with the schema in
 
     #CLASS METHOD
     @classmethod
-    def get_all(cls):                            # get all the data from db and place it in our class USING A SELECT STATEMENT
+    # get all the data from db and place it in our class USING A SELECT STATEMENT
+    def get_all(cls):                            
         query = "SELECT * FROM gamers;"
-        results = connectToMySQL('gamers').query_db(query)      #Input name of schema used; .query_db allows us to query db with 'query' stated 1 line above
+        #Input name of schema used; .query_db allows us to query db with 'query' stated 1 line above
+        results = connectToMySQL('gamers').query_db(query)      
         
-        gamers = []                                             #This epmty list establishes a place to put our g
-        for g in results:                                       # want to output as a list of 'gamer' objects; from dictionaries (sqldb) to objects(OOP language manipulateable)
-            gamers.append( cls(g) )                               #g for gamer, translate for the initiation-------------------------------further explain------------------------
-        return gamers                                           #return back results of the work
+        #This epmty list establishes a place to put our g
+        gamers = []                                             
+         # want to output as a list of 'gamer' objects; from dictionaries (sqldb) to objects(OOP language manipulateable)
+        for g in results:
+            #g for gamer, translate for the initiation-------------------------------further explain------------------------                                   
+            gamers.append( cls(g) )
+        #return back results of the work                            
+        return gamers                                           
