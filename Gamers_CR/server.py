@@ -19,6 +19,7 @@ def new():                                                           #new() will
 @app.route('/gamers/create', methods=['POST'])                      #requires a post method to post inputed data from html
 def create():
     print(request.form)
+    Gamers.save(request.form)                                       #This line added to allow for input passing on new_gamers (where def save() is called)
     return redirect('/gamers')
 
 if __name__=="__main__":                                            #This black need to be last in file

@@ -30,6 +30,11 @@ class Gamers:
         #return back results of the work                            
         return gamers
     
+    #allow data input; for new_gamer.html
     @classmethod
     def save(cls, data):
-        query = "INSERT INTO gamers (f_name, l_name, tag) VALUES (%(f_name)s, %(l_name)s, %(tag)s)"
+        query = "INSERT INTO gamers (f_name, l_name, tag, clan_id) VALUES (%(f_name)s, %(l_name)s, %(tag)s, %(clan_id)s);"
+        
+        #returns as the new row id
+        result = connectToMySQL('gamers').query_db(query,data)
+        return result
