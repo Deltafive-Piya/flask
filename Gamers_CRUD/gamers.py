@@ -38,9 +38,3 @@ class Gamers:
         #returns as the new row id
         result = connectToMySQL('gamers').query_db(query,data)
         return result
-    
-    @classmethod
-    def get_one(cls, data):
-        query = "SELECT * FROM gamers WHERE id = %(id)s;"
-        result = connectToMySQL('gamers').query_db(query,data)
-        return cls(result[0])                                   #MUST TREAT THE OUTPUT AS A LIST, hence [0]

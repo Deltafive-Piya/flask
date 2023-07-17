@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>new_gamer.html</title>
+    <title>edit_gamer.html</title>
 </head>
 <body>
     <a href="/gamers">Home</a>
-    <h1>New Gamer Form</h1>
-    <form action="/gamers/create" method="post">    <!-- This tells server py it needs an "@approute('/gamers/create')" -->
+    <h1>Edit {{gamers.f_name}} Form</h1>            <!--pass the {{table.col}} so page is tailored to specific user-->
+    <form action="/gamers/update" method="post">    <!-- If carried over from new, ALTER THIS PATH -->
         <div>
             <label for="f_name">First Name:</label>
-            <input type="text" name="f_name">
+            <input type="text" name="f_name" value="{{gamers.f_name}}">
         </div>
         <div>
             <label for="">Last Name:</label>
-            <input type="text" name="l_name">
+            <input type="text" name="l_name" value="{{gamers.l_name}}">
         </div>
         <div>
             <label for="">Tag:</label>
-            <input type="text" name="tag">
+            <input type="text" name="tag" value="{{gamers.tag}}">
         </div>
         <div>
             <label for="">Clan ID:</label>
             <input type="text" name="clan_id">
         </div>
-        <input type="submit" value="Register Gamer">
+        <input type="submit" value="Update Profile" value="{{gamers.clan_id}}">
     </form>
 </body>
 </html>

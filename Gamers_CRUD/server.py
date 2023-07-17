@@ -22,14 +22,5 @@ def create():
     Gamers.save(request.form)                                       #This line added to allow for input passing on new_gamers (where def save() is called)
     return redirect('/gamers')
 
-@app.route('/gamers/update/<int:id>')                               #<int:id>
-def edit(id):
-    data ={ "id":id }
-    return render_template('update_gamer.html', gamers=Gamers.get_one(data))
-
-
-
-
-
 if __name__=="__main__":                                            #This black need to be last in file
     app.run(host='localhost', port=5002, debug=True)

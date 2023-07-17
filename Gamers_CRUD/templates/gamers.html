@@ -16,7 +16,6 @@
                 <th>Created_at</th>
                 <th>updated_at</th>
                 <th>clan_id</th>
-                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -30,9 +29,6 @@
                 <td>{{gamers.created_at}}</td>
                 <td>{{gamers.updated_at}}</td>
                 <td>{{gamers.clan_id}}</td>
-                <td>
-                    <a href="/gamers/update/{{ gamers.id }}">Edit</a>
-                </td>
             </tr>
             {% endfor %}
         </tbody>
