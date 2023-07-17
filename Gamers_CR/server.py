@@ -16,6 +16,10 @@ def gamers():                                                       #gamers rout
 def new():                                                           #new() will display html new_gamer.html
     return render_template("new_gamer.html")
 
+@app.route('/gamers/create', methods=['POST'])                      #requires a post method to post inputed data from html
+def create():
+    print(request.form)
+    return redirect('/gamers')
 
 if __name__=="__main__":                                            #This black need to be last in file
     app.run(host='localhost', port=5002, debug=True)
