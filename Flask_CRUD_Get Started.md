@@ -59,16 +59,11 @@ pipenv shell
 ## Create server.py
 
 ```Py
-from flask import Flask, render_template, request, redirect
+from flask_app import app
 
-app=Flask(__name__)
-
-@app.route('/')                                             #redirecting index route to users
-def index():
-    return redirect('/users')
-
-if __name__=="__main__":                                    #This black need to be last in file
-    app.run(host='localhost', port=5002, debug=True)
+#MAKE SURE THIS IS AT THE BOTTOM
+if __name__=="__main__":
+    app.run(debug=True)
 
 
 ```
