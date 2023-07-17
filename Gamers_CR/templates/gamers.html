@@ -6,27 +6,32 @@
     <title>gamers.html</title>
 </head>
 <body>
-    <h1 class="text-center">Gamers are populated:</h1>
-    <thead>
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>tag</th>
-            <th>Created_at</th>
-            <th>updated_at</th>
-        </tr>
-    </thead>
-    <tbody>
-        <!-- Diji Loop Here -->
-        {% for gamer in gamers %}
-        <tr>
-            <td>{{gamers.f_name}}</td>
-            <td>{{gamers.l_name}}</td>
-            <td>{{gamers.tag}}</td>
-            <td>{{gamers.created_at}}</td>
-            <td>{{gamers.updated_at}}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
+    <h1>Gamers are populated:</h1>         <!-- To Do------ css here -->
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>tag</th>
+                <th>Created_at</th>
+                <th>updated_at</th>
+                <th>clan_id</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <!-- Diji Loop Here -->
+            {% for gamers in gamers %}      <!-- For (table name) in (schema name) -->
+            <tr>
+                <td>{{gamers.f_name}}</td>
+                <td>{{gamers.l_name}}</td>
+                <td>{{gamers.tag}}</td>
+                <td>{{gamers.created_at}}</td>
+                <td>{{gamers.updated_at}}</td>
+                <td>{{gamers.clan_id}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>

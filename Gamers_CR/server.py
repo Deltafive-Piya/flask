@@ -4,13 +4,13 @@ from gamers import Gamers
 
 app=Flask(__name__)
 
-@app.route('/')                                             #redirecting index route to users
-def index():
+@app.route('/')                                             #redirecting index route to users page
+def index():                                                #Index has function to resdirect to route(/gamers)
     return redirect('/gamers')
 
 @app.route('/gamers')
-def gamers():
-    return render_template("gamers.html", gamers=Gamers.get_all())
+def gamers():                                                       #gamers route has gamers() function
+    return render_template("gamers.html", gamers=Gamers.get_all())  #runs the gamers.py function get_all()
 
-if __name__=="__main__":                                    #This black need to be last in file
+if __name__=="__main__":                                            #This black need to be last in file
     app.run(host='localhost', port=5002, debug=True)

@@ -17,7 +17,7 @@ class Gamers:                                   #line this up with the schema in
         query = "SELECT * FROM gamers;"
         results = connectToMySQL('gamers').query_db(query)      #Input name of schema used; .query_db allows us to query db with 'query' stated 1 line above
         
-        gamers = []                                             #This eomty list establishes a place to put our g
+        gamers = []                                             #This epmty list establishes a place to put our g
         for g in results:                                       # want to output as a list of 'gamer' objects; from dictionaries (sqldb) to objects(OOP language manipulateable)
             gamers.append( cls(g) )                               #g for gamer, translate for the initiation-------------------------------further explain------------------------
         return gamers                                           #return back results of the work
