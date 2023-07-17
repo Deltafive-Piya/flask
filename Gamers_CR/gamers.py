@@ -28,4 +28,8 @@ class Gamers:
             #g for gamer, translate for the initiation-------------------------------further explain------------------------                                   
             gamers.append( cls(g) )
         #return back results of the work                            
-        return gamers                                           
+        return gamers
+    
+    @classmethod
+    def save(cls, data):
+        query = "INSERT INTO gamers (f_name, l_name, tag) VALUES (%(f_name)s, %(l_name)s, %(tag)s)"
