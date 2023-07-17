@@ -2,10 +2,10 @@
 from mysqlconnection import connectToMySQL
 #line this up with the schema in the database
 class Gamers:                                   
-    #Include the respective tables' columns
-    self.id = data['id']                    
+    
     #This was copied to populate the below, may need to adjust to match table
     def __init__(self, data):
+        self.id = data['id']                    
         self.f_name = data['f_name']
         self.l_name = data['l_name']
         self.tag = data['tag']
