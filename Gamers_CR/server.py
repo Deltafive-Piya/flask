@@ -12,5 +12,10 @@ def index():                                                #Index has function 
 def gamers():                                                       #gamers route has gamers() function
     return render_template("gamers.html", gamers=Gamers.get_all())  #runs the gamers.py function get_all()
 
+@app.route('/gamers/new')
+def new():                                                           #new() will display html new_gamer.html
+    return render_template("new_gamer.html")
+
+
 if __name__=="__main__":                                            #This black need to be last in file
     app.run(host='localhost', port=5002, debug=True)
