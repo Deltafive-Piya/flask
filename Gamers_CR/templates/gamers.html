@@ -6,7 +6,7 @@
     <title>gamers.html</title>
 </head>
 <body>
-    <h1>Gamers List:</h1>         <!-- To Do------ css can go here -->
+    <h2>Gamers List:</h2>         <!-- To Do------ css can go here -->
     <table>
         <thead>
             <tr>
@@ -31,7 +31,9 @@
                 <td>{{gamers.updated_at}}</td>
                 <td>{{gamers.clan_id}}</td>
                 <td>
-                    <a href="/gamers/update/{{ gamers.id }}">Edit</a>
+                    <a href="/gamers/show/{{ gamers.id }}">Show</a> |
+                    <a href="/gamers/update/{{ gamers.id }}">Edit</a> |
+                    <a href="/gamers/destroy/{{ gamers.id }}">Delete</a> 
                 </td>
             </tr>
             {% endfor %}
