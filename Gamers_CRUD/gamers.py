@@ -38,3 +38,19 @@ class Gamers:
         #returns as the new row id
         result = connectToMySQL('gamers').query_db(query,data)
         return result
+    
+    @classmethod
+    def get_one(cls, data):
+        query = "SELECT * FROM gamers WHERE id = %(id)s;"
+        result = connectToMySQL('gamers').query_db(query,data)
+        return cls(result[0])                                   #MUST TREAT THE OUTPUT AS A LIST, hence [0]
+    
+    @classmethod
+    def update(cls, data):
+        query = "UPDATE gamers SET f_name=%(f_name)s, l_name=%(l_name)s, tag=%(tag)s, clan_id=%(clan_id)s, updated_at=NOW() WHERE id= %(id)s;"
+        return connectToMySQL('gamers').query_db(query, data)
+    
+    @classmethod
+    def destroy(cls,data):
+        query = "DELETE FROM gamers WHERE id = %(id)s;"
+        return connectToMySQL('gamers').query_db(query, data)
