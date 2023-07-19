@@ -1,5 +1,5 @@
 #import mysqlconnection
-from mysqlconnection import connectToMySQL
+from flask_app.config.mysqlconnection import connectToMySQL
 #line this up with the schema in the database
 class Gamers:                                   
     
