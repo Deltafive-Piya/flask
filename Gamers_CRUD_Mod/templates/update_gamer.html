@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update_gamer.html</title>
+</head>
+<body>
+    <a href="/gamers">Home</a>
+    <h2>Update: {{gamers.f_name +" "+ gamers.l_name}}</h2>            <!--pass the table.col so page is tailored to specific user-->
+    <form action="/gamers/update" method="post">      <!-- If carried over from new, ALTER THIS PATH -->
+        <div>
+            <input type="hidden" name="id" value="{{gamers.id}}">
+            <label for="f_name">First Name:</label>
+            <input type="text" name="f_name" value="{{gamers.f_name}}">
+        </div>
+        <div>
+            <label for="l_name">Last Name:</label>
+            <input type="text" name="l_name" value="{{gamers.l_name}}">
+        </div>
+        <div>
+            <label for="tag">Tag:</label>
+            <input type="text" name="tag" value="{{gamers.tag}}">
+        </div>
+        <div>
+            <label for="clan_id">Clan ID:</label>
+            <input type="text" name="clan_id" value="{{gamers.clan_id}}">
+        </div>
+        <input type="submit" value="Update Profile">
+    </form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gamers.html</title>
+</head>
+<body>
+    <h2>Gamers List:</h2>         <!-- To Do------ css can go here -->
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>tag</th>
+                <th>Created_at</th>
+                <th>updated_at</th>
+                <th>clan_id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <!-- Diji Loop Here -->
+            {% for gamers in gamers %}      <!-- For (table name) in (schema name) -->
+            <tr>
+                <td>{{gamers.f_name}}</td>
+                <td>{{gamers.l_name}}</td>
+                <td>{{gamers.tag}}</td>
+                <td>{{gamers.created_at}}</td>
+                <td>{{gamers.updated_at}}</td>
+                <td>{{gamers.clan_id}}</td>
+                <td>
+                    <a href="/gamers/show/{{ gamers.id }}">Show</a> |
+                    <a href="/gamers/update/{{ gamers.id }}">Edit</a> |
+                    <a href="/gamers/destroy/{{ gamers.id }}">Delete</a> 
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <!-- This will allow for the routing of new_gamer.html -->
+    <a href="/gamers/new">Add a Gamer</a>  
+    
+    <footer style="position: relative; left: 0; bottom: 0; width: 100%;">
+        <a href="https://login.codingdojo.com/m/172/7789/54097" style="display: block; text-align: center;">Platform</a>
+    </footer>
+    
+</body>
+</html>
